@@ -1,10 +1,10 @@
 {
   "id": "progressbar-inline",
   "name": "ProgressBar Inline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "1.8.9",
   "description": "用<progress>标签实现的Dataview行内进度条，支持属性和任务统计，支持标签/文件夹聚合。",
-  "author": "xw",
+  "author": "xwde0205",
   "authorUrl": "",
   "isDesktopOnly": false
 }

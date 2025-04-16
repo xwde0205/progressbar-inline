@@ -12,30 +12,105 @@ progress.progressbar-inline::-webkit-progress-bar {
   border-radius: 6px;
 }
 /* 红色 0-25% */
-progress.progressbar-inline.progress-red::-webkit-progress-value {
+.progressbar-inline.progress-red::-webkit-progress-value {
   background-color: #f44336;
 }
-progress.progressbar-inline.progress-red::-moz-progress-bar {
+.progressbar-inline.progress-red::-moz-progress-bar {
   background-color: #f44336;
 }
 /* 橙色 26-50% */
-progress.progressbar-inline.progress-orange::-webkit-progress-value {
+.progressbar-inline.progress-orange::-webkit-progress-value {
   background-color: #ff9800;
 }
-progress.progressbar-inline.progress-orange::-moz-progress-bar {
+.progressbar-inline.progress-orange::-moz-progress-bar {
   background-color: #ff9800;
 }
 /* 黄色 51-75% */
-progress.progressbar-inline.progress-yellow::-webkit-progress-value {
+.progressbar-inline.progress-yellow::-webkit-progress-value {
   background-color: #ffeb3b;
 }
-progress.progressbar-inline.progress-yellow::-moz-progress-bar {
+.progressbar-inline.progress-yellow::-moz-progress-bar {
   background-color: #ffeb3b;
 }
-/* 绿色 76-100% */
-progress.progressbar-inline.progress-green::-webkit-progress-value {
+/* 绿色 76-99% */
+.progressbar-inline.progress-green::-webkit-progress-value {
   background-color: #4caf50;
 }
-progress.progressbar-inline.progress-green::-moz-progress-bar {
+.progressbar-inline.progress-green::-moz-progress-bar {
   background-color: #4caf50;
+}
+/* 紫色 100% */
+.progressbar-inline.progress-purple::-webkit-progress-value {
+  background-color: #9c27b0;
+}
+.progressbar-inline.progress-purple::-moz-progress-bar {
+  background-color: #9c27b0;
+}
+
+
+
+.progressbar-inline-wrap {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.progressbar-inline-center {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  line-height: 16px;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressbar-inline-count {
+  position: absolute;
+  left: 8px;
+  top: 75%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  line-height: 16px;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
+  height: 16px;
+}
+
+/* 新增：百分比右对齐 */
+.progressbar-inline-right {
+  position: absolute;
+  right: 8px;
+  top: 75%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  line-height: 16px;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
+  height: 16px;
+}
+
+.theme-dark .progressbar-inline-center,
+.theme-dark .progressbar-inline-count,
+.theme-dark .progressbar-inline-right {
+  color: #fff;
+  text-shadow: 0 1px 2px #000, 0 0 2px #000;
 }
