@@ -1,116 +1,58 @@
-progress.progressbar-inline {
-  width: 120px;
-  height: 16px;
-  border-radius: 6px;
-  background: #eee;
-  margin-right: 6px;
-  vertical-align: middle;
-  appearance: none;
-}
-progress.progressbar-inline::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 6px;
-}
-/* 红色 0-25% */
-.progressbar-inline.progress-red::-webkit-progress-value {
-  background-color: #f44336;
-}
-.progressbar-inline.progress-red::-moz-progress-bar {
-  background-color: #f44336;
-}
-/* 橙色 26-50% */
-.progressbar-inline.progress-orange::-webkit-progress-value {
-  background-color: #ff9800;
-}
-.progressbar-inline.progress-orange::-moz-progress-bar {
-  background-color: #ff9800;
-}
-/* 黄色 51-75% */
-.progressbar-inline.progress-yellow::-webkit-progress-value {
-  background-color: #ffeb3b;
-}
-.progressbar-inline.progress-yellow::-moz-progress-bar {
-  background-color: #ffeb3b;
-}
-/* 绿色 76-99% */
-.progressbar-inline.progress-green::-webkit-progress-value {
-  background-color: #4caf50;
-}
-.progressbar-inline.progress-green::-moz-progress-bar {
-  background-color: #4caf50;
-}
-/* 紫色 100% */
-.progressbar-inline.progress-purple::-webkit-progress-value {
-  background-color: #9c27b0;
-}
-.progressbar-inline.progress-purple::-moz-progress-bar {
-  background-color: #9c27b0;
-}
-
-
-
-.progressbar-inline-wrap {
+.my-progressbar-outer {
   position: relative;
-  display: inline-block;
-  width: 120px;
-  height: 16px;
-  vertical-align: middle;
-}
-
-.progressbar-inline-center {
-  position: absolute;
-  left: 50%;
-  top: 75%;
-  transform: translate(-50%, -50%);
   width: 100%;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  line-height: 16px;
-  pointer-events: none;
-  user-select: none;
-  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
+  max-width: 240px;
+  min-width: 60px;
   height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 2px 0;
+  display: block;
 }
 
-.progressbar-inline-count {
+.my-progressbar-inner {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.3s;
+}
+
+.my-progressbar-label {
   position: absolute;
-  left: 8px;
-  top: 75%;
-  transform: translateY(-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 16px;
   font-weight: bold;
   color: #333;
-  line-height: 16px;
   pointer-events: none;
   user-select: none;
   text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
-  height: 16px;
+  line-height: 16px;
+  white-space: nowrap;
 }
 
-/* 新增：百分比右对齐 */
-.progressbar-inline-right {
-  position: absolute;
-  right: 8px;
-  top: 75%;
+.my-progressbar-label-left {
+  left: 12px;
   transform: translateY(-50%);
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  line-height: 16px;
-  pointer-events: none;
-  user-select: none;
-  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
-  height: 16px;
+  text-align: left;
 }
 
-.theme-dark .progressbar-inline-center,
-.theme-dark .progressbar-inline-count,
-.theme-dark .progressbar-inline-right {
+.my-progressbar-label-right {
+  left: auto;
+  right: 12px;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+/* 暗色主题适配 */
+.theme-dark .my-progressbar-label,
+.theme-dark .my-progressbar-label-left,
+.theme-dark .my-progressbar-label-right {
   color: #fff;
   text-shadow: 0 1px 2px #000, 0 0 2px #000;
+}
+
+.theme-dark .my-progressbar-outer {
+  background: #444;
 }

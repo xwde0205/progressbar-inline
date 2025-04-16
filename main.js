@@ -1,6 +1,6 @@
 const { Plugin } = require('obsidian');
 
-module.exports = class ProgressBarInlinePlugin extends Plugin {
+module.exports = class ProgressBarDivPlugin extends Plugin {
     async onload() {
         // 属性进度条
         window.pb = (p, t) => {
@@ -8,12 +8,12 @@ module.exports = class ProgressBarInlinePlugin extends Plugin {
             t = Number(t) || 0;
             let percent = t > 0 ? Math.round(p / t * 100) : 0;
             if (percent > 100) percent = 100;
-            let c = "progress-red";
-            if (percent === 100) c = "progress-purple";
-            else if (percent > 75) c = "progress-green";
-            else if (percent > 50) c = "progress-yellow";
-            else if (percent > 25) c = "progress-orange";
-            return `<span class="progressbar-inline-wrap" style="display:inline-block;position:relative;width:120px;height:16px;vertical-align:middle;"><progress class="progressbar-inline ${c}" value="${percent}" max="100"></progress><span class="progressbar-inline-center">${percent}%</span></span>`;
+            let color = "#f44336";
+            if (percent === 100) color = "#9c27b0";
+            else if (percent > 75) color = "#4caf50";
+            else if (percent > 50) color = "#ffeb3b";
+            else if (percent > 25) color = "#ff9800";
+            return `<div class="my-progressbar-outer"><div class="my-progressbar-inner" style="width:${percent}%;background:${color};"></div><span class="my-progressbar-label">${percent}%</span></div>`;
         };
         // 任务进度条
         window.tb = (d, a) => {
@@ -21,12 +21,12 @@ module.exports = class ProgressBarInlinePlugin extends Plugin {
             a = Number(a) || 0;
             let percent = a > 0 ? Math.round(d / a * 100) : 0;
             if (percent > 100) percent = 100;
-            let c = "progress-red";
-            if (percent === 100) c = "progress-purple";
-            else if (percent > 75) c = "progress-green";
-            else if (percent > 50) c = "progress-yellow";
-            else if (percent > 25) c = "progress-orange";
-            return `<span class="progressbar-inline-wrap" style="display:inline-block;position:relative;width:120px;height:16px;vertical-align:middle;"><progress class="progressbar-inline ${c}" value="${percent}" max="100"></progress><span class="progressbar-inline-count">${d}/${a}</span><span class="progressbar-inline-right">${percent}%</span></span>`;
+            let color = "#f44336";
+            if (percent === 100) color = "#9c27b0";
+            else if (percent > 75) color = "#4caf50";
+            else if (percent > 50) color = "#ffeb3b";
+            else if (percent > 25) color = "#ff9800";
+            return `<div class="my-progressbar-outer"><div class="my-progressbar-inner" style="width:${percent}%;background:${color};"></div><span class="my-progressbar-label my-progressbar-label-left">${d}/${a}</span><span class="my-progressbar-label my-progressbar-label-right">${percent}%</span></div>`;
         };
     }
 };
